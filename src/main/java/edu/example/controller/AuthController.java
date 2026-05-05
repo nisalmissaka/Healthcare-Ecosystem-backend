@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:59080")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AuthController {
 
     private final AuthService authService;
@@ -24,7 +24,7 @@ public class AuthController {
         Map<String,String> result = authService.authenticateUser(loginRequest);
 
         if ("Nisal".equals(loginRequest.getUsername()) &&
-                "0764456476".equals(loginRequest.getPhoneNumber())) {
+                "wishwakanisal@gmail.com".equals(loginRequest.getEmail())) {
 
             return ResponseEntity.ok(Map.of(
                     "status", "success",
